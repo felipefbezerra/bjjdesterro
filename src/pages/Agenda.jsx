@@ -47,15 +47,14 @@ export default function Agenda() {
             {/* Esquerda */}
             <div className="w-full md:w-1/4 order-2 md:order-1 self-center">
               <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video border border-zinc-100">
-                <img src="/img/treinos/equipefeminina.jpeg" alt="Treino" className="w-full h-full object-cover" />
+                <img src="/img/treinos/treinogeral.jpeg" alt="Treino" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black/5" />
               </div>
             </div>
 
-            {/* Centro (Destaque) - Etiqueta Removida */}
             <div className="w-full md:w-2/5 order-1 md:order-2 z-10">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video border-4 border-white transform md:scale-110">
-                <img src="/img/treinos/treinogeral.jpeg" alt="Treino Principal" className="w-full h-full object-cover" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video transform md:scale-110">
+                <img src="/img/membros/equipeemflecha.jpeg" alt="Treino Principal" className="w-full h-full object-cover" />
               </div>
             </div>
 
