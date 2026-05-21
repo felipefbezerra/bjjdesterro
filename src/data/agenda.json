@@ -7,22 +7,10 @@
     ]
   },
   {
-    "dia": "Terça",
-    "treinos": [
-      { "horario": "19h – 21h", "categoria": "Adulto", "tipo": "No Gi" }
-    ]
-  },
-  {
     "dia": "Quarta",
     "treinos": [
       { "horario": "18h – 19h", "categoria": "Infantil", "tipo": "Kimono" },
       { "horario": "19h – 21h", "categoria": "Adulto", "tipo": "Kimono" }
-    ]
-  },
-  {
-    "dia": "Quinta",
-    "treinos": [
-      { "horario": "19h – 21h", "categoria": "Adulto", "tipo": "No Gi" }
     ]
   },
   {

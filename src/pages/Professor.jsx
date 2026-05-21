@@ -57,7 +57,7 @@ export default function Professor() {
 
               <div className="space-y-4 text-zinc-600 text-sm leading-relaxed text-justify">
                 <p>
-                  Faixa Preta de Jiu-Jitsu e fundador do projeto social <strong>JIU-JITSU — Disciplina e Educação para a Vida</strong>,
+                Faixa Preta de Jiu-Jitsu e fundador do projeto social <strong>JIU-JITSU — Disciplina e Educação para a Vida</strong>,
                   Ramon Cleber é a força motriz por trás de uma das iniciativas sociais mais impactantes da cidade de Desterro.
                 </p>
                 <p>
@@ -74,7 +74,8 @@ export default function Professor() {
               {/* Highlights Rápidos */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 mt-8">
                 {[
-                  { icon: 'fas fa-certificate', label: 'Faixa Preta' },
+                  { icon: 'fas fa-certificate', label: 'Bacharel em Educação Física' },
+                  { icon: 'fas fa-medal', label: 'Faixa Preta' },
                   { icon: 'fas fa-users', label: '+80 alunos' },
                 ].map(({ icon, label }) => (
                   <div key={label} className="flex items-center gap-3 bg-zinc-50 border border-zinc-100 rounded-xl p-4">

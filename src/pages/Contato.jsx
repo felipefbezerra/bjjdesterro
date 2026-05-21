@@ -2,7 +2,7 @@ import PageHero from '../components/PageHero'
 
 const faqs = [
   { q: 'O projeto é realmente gratuito?', r: 'Sim. O projeto é sem fins lucrativos e todas as aulas são completamente gratuitas para a comunidade.' },
-  { q: 'Qual a idade mínima para participar?', r: 'Aceitamos crianças a partir de 5 anos na turma infantil. Adultos de qualquer idade são bem-vindos.' },
+  { q: 'Qual a idade mínima para participar?', r: 'Aceitamos crianças a partir de 7 anos na turma infantil. Adultos de qualquer idade são bem-vindos.' },
   { q: 'Preciso ter experiência prévia?', r: 'Não. Aceitamos iniciantes completos. O professor adapta o ensino ao nível de cada aluno.' },
   { q: 'O que devo levar na primeira aula?', r: 'Roupas confortáveis (camisa e calça/bermuda) e disposição. O kimono não é obrigatório no início.' },
   { q: 'Posso assistir antes de me inscrever?', r: 'Com certeza. Venha visitar um treino e conheça o ambiente antes de qualquer compromisso.' },

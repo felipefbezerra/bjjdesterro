@@ -51,7 +51,7 @@ export default function Sobre() {
               { num: '2013', label: 'Funcionamento', icon: 'fas fa-flag' },
               { num: '80+', label: 'Alunos', icon: 'fas fa-users' },
               { num: '0', label: 'Custo Mensal', icon: 'fas fa-heart' },
-              { num: '6', label: 'Dias por semana', icon: 'fas fa-calendar' },
+              { num: '4', label: 'Dias por semana', icon: 'fas fa-calendar' },
             ].map(({ num, label, icon }) => (
               <div key={label} className="bg-zinc-50 rounded-2xl p-6 text-center border border-zinc-100">
                 <i className={`${icon} text-accent text-2xl mb-3`}></i>
