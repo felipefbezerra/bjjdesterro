@@ -1,99 +1,156 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import {
+  ChevronDown,
+  ShieldCheck,
+} from 'lucide-react'
+
 import PageHero from '../components/PageHero'
+import SEO from '../components/SEO'
 import regras from '../data/regras.json'
 
 export default function Regras() {
-  const [expanded, setExpanded] = useState(null)
-
-  const toggle = (n) => setExpanded(prev => prev === n ? null : n)
-
   return (
-    <div>
-      <PageHero
-        accent="Código de Conduta"
-        title="Regras do Tatame"
-        subtitle="19 princípios que guiam nossa prática e nosso caráter dentro e fora do tatame."
+    <>
+      <SEO
+        title="Regras do Tatame | Projeto Jiu-Jitsu Desterro"
+        description="Conheça as regras de convivência, segurança, higiene e conduta adotadas nos treinos do Projeto Jiu-Jitsu Desterro."
+        path="/regras"
       />
 
-      <section className="bg-light py-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      <div className="bg-light min-h-screen">
+        <PageHero
+          accent="Código de conduta"
+          title="Regras do Tatame"
+          subtitle={`${regras.length} orientações que organizam a convivência, a segurança e a rotina dos treinos.`}
+        />
 
-          {/* Intro banner */}
-          <div className="bg-black text-white rounded-2xl p-8 mb-12 flex gap-6 items-center">
-            <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center flex-shrink-0">
-              <i className="fas fa-scroll text-white text-2xl"></i>
-            </div>
-            <div>
-              <h3 className="font-display text-2xl tracking-wider mb-1">Por que as Regras Importam</h3>
-              <p className="text-zinc-400 text-sm leading-relaxed">
-                O Jiu-Jitsu é uma arte marcial baseada em respeito e disciplina. Estas regras não
-                são restrições — são os valores que nos tornam uma comunidade coesa e um projeto que
-                transforma vidas desde 2013.
-              </p>
+        {/* INTRODUÇÃO */}
+        <section className="bg-white py-16 md:py-20 px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-start border-y border-zinc-200 py-8">
+              <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center">
+                <ShieldCheck
+                  size={21}
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div>
+                <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                  Antes de treinar
+                </p>
+
+                <h2 className="font-display text-3xl md:text-4xl text-black tracking-wide mb-3">
+                  Segurança e respeito fazem parte do treino
+                </h2>
+
+                <p className="text-zinc-600 text-sm md:text-base leading-relaxed max-w-3xl">
+                  As regras do projeto ajudam a manter um
+                  ambiente seguro, organizado e respeitoso para
+                  crianças e adultos. Elas orientam desde a
+                  higiene e a pontualidade até a conduta durante
+                  os treinos e a representação da equipe fora do
+                  tatame.
+                </p>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Rules grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {regras.map((regra) => {
-              const isOpen = expanded === regra.numero
-              return (
-                <div
+        {/* REGRAS */}
+        <section className="bg-zinc-100 pb-20 md:pb-24 px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-10">
+              <div>
+                <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                  Orientações
+                </p>
+
+                <h2 className="font-display text-5xl md:text-6xl text-black tracking-wide">
+                  Código do tatame
+                </h2>
+              </div>
+
+              <p className="text-xs text-zinc-500 max-w-xs md:text-right leading-relaxed">
+                Abra cada item para consultar sua descrição
+                completa.
+              </p>
+            </div>
+
+            <div className="border-t border-zinc-300">
+              {regras.map((regra) => (
+                <details
                   key={regra.numero}
-                  className={`bg-white rounded-xl overflow-hidden shadow-sm border transition-all duration-300
-                    ${isOpen ? 'border-accent shadow-md' : 'border-zinc-100 hover:border-zinc-300'}`}
+                  className="group border-b border-zinc-300"
                 >
-                  <button
-                    className="w-full flex items-center gap-4 px-6 py-5 text-left"
-                    onClick={() => toggle(regra.numero)}
-                  >
-                    {/* Number */}
-                    <span className={`font-display text-5xl leading-none flex-shrink-0 transition-colors duration-300
-                      ${isOpen ? 'text-accent' : 'text-zinc-200'}`}>
-                      {String(regra.numero).padStart(2, '0')}
+                  <summary className="list-none cursor-pointer py-6 flex items-center gap-4 md:gap-6">
+                    <span className="font-display text-3xl md:text-4xl leading-none text-zinc-300 group-open:text-accent transition-colors flex-shrink-0 w-10 md:w-12">
+                      {String(regra.numero).padStart(
+                        2,
+                        '0',
+                      )}
                     </span>
-                    {/* Title */}
-                    <span className="font-bold text-sm uppercase tracking-wider text-black flex-1">
+
+                    <span className="font-bold text-sm md:text-base text-black flex-1">
                       {regra.titulo}
                     </span>
-                    {/* Chevron */}
-                    <i className={`fas fa-chevron-down text-accent text-xs transition-transform duration-300
-                      ${isOpen ? 'rotate-180' : ''}`} />
-                  </button>
 
-                  {/* Expandable body */}
-                  <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-48' : 'max-h-0'}`}>
-                    <p className="px-6 pb-6 text-zinc-500 text-sm leading-relaxed border-t border-zinc-100 pt-4">
+                    <ChevronDown
+                      size={19}
+                      className="text-zinc-400 group-open:text-accent group-open:rotate-180 transition-transform flex-shrink-0"
+                      aria-hidden="true"
+                    />
+                  </summary>
+
+                  <div className="pb-6 pl-14 md:pl-[72px] pr-8">
+                    <p className="text-zinc-600 text-sm leading-relaxed max-w-3xl">
                       {regra.descricao}
                     </p>
                   </div>
-                </div>
-              )
-            })}
+                </details>
+              ))}
+            </div>
           </div>
+        </section>
 
-          {/* Expand all hint */}
-          <p className="text-center text-zinc-400 text-xs mt-8">
-            Clique em cada regra para expandir e ler a descrição completa.
-          </p>
+        {/* OBSERVAÇÃO */}
+        <section className="bg-white py-16 px-6">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 md:items-center">
+            <div>
+              <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                Primeira aula
+              </p>
 
-          {/* CTA */}
-          <div className="mt-16 text-center bg-accent rounded-2xl p-10 text-white">
-            <h3 className="font-display text-4xl tracking-wide mb-3">Aceita o Desafio?</h3>
-            <p className="text-red-200 text-sm mb-6 max-w-md mx-auto">
-              Ao entrar no tatame, você assume o compromisso com esses valores. Estamos prontos para te receber.
-            </p>
-            <a
-              href="https://wa.me/558386909986"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block bg-white text-accent font-bold text-xs uppercase tracking-widest px-8 py-3 rounded-full hover:bg-zinc-100 transition-colors"
-            >
-              Quero Fazer Parte
-            </a>
+              <h2 className="font-display text-4xl md:text-5xl text-black tracking-wide">
+                Não precisa decorar tudo antes de começar
+              </h2>
+
+              <p className="text-zinc-600 text-sm leading-relaxed mt-3 max-w-2xl">
+                As orientações são apresentadas e reforçadas no
+                dia a dia dos treinos. Em caso de dúvida,
+                converse com o professor antes ou durante a
+                atividade.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3">
+              <Link
+                to="/agenda"
+                className="btn-primary text-center whitespace-nowrap"
+              >
+                Ver horários
+              </Link>
+
+              <Link
+                to="/contato"
+                className="px-7 py-3 text-center rounded-full border border-zinc-300 text-black text-xs font-bold uppercase tracking-widest hover:border-black transition-colors whitespace-nowrap"
+              >
+                Falar conosco
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

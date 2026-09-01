@@ -1,126 +1,377 @@
-import PageHero from '../components/PageHero'
 import { Link } from 'react-router-dom'
+import {
+  Award,
+  BriefcaseBusiness,
+  GraduationCap,
+  MessageCircle,
+  ShieldCheck,
+} from 'lucide-react'
 
-const conquistas = [
-  { ano: '2026', titulo: '3º lugar — Paraibano de Jiu-Jitsu' },
-  { ano: '2026', titulo: 'Representação no Open Itapetim – PE' },
-  { ano: '2023', titulo: 'Campeonato Paraibano em Pombal - PB' },
-  { ano: '2023', titulo: 'Open Patos - PB' },
-  { ano: '2013', titulo: 'Fundação do Projeto Social em Desterro – PB' },
+import PageHero from '../components/PageHero'
+import SEO from '../components/SEO'
+import {
+  contact,
+  createWhatsAppUrl,
+} from '../data/contacts'
+
+const destaques = [
+  {
+    icon: Award,
+    label: 'Faixa-preta',
+    description: 'Jiu-Jitsu',
+  },
+  {
+    icon: GraduationCap,
+    label: 'Bacharel',
+    description: 'Educação Física',
+  },
+  {
+    icon: BriefcaseBusiness,
+    label: 'Presidente',
+    description: 'Associação',
+  },
+  {
+    icon: ShieldCheck,
+    label: 'Fundador',
+    description: 'Projeto desde 2013',
+  },
 ]
+
+const trajetoria = [
+  {
+    ano: '2013',
+    titulo: 'Fundação do projeto',
+    texto:
+      'Ramon inicia em Desterro o Projeto Jiu-Jitsu — Disciplina e Educação para a Vida, com atividades gratuitas para a comunidade.',
+  },
+  {
+    ano: '2023',
+    titulo: 'Participação em competições',
+    texto:
+      'O projeto participa de eventos como o Campeonato Paraibano em Pombal e o Open de Patos, representando Desterro no circuito esportivo regional.',
+  },
+  {
+    ano: '2025',
+    titulo: 'Formalização da associação',
+    texto:
+      'Com a constituição formal da Associação Jiu-Jitsu — Disciplina e Educação para a Vida, Ramon Cleber assume a presidência da entidade.',
+  },
+  {
+    ano: '2026',
+    titulo: 'Reconhecimento institucional',
+    texto:
+      'Ramon representa o projeto na Câmara Municipal de Desterro durante a solenidade em que a instituição recebe uma Moção de Apoio.',
+  },
+]
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ramon Cleber do Carmo Lima',
+  image:
+    'https://jiujitsudesterro.vercel.app/img/membros/professorramon.jpeg',
+  jobTitle: 'Professor de Jiu-Jitsu',
+  description:
+    'Faixa-preta de jiu-jitsu, fundador do Projeto Jiu-Jitsu Desterro e presidente da Associação Jiu-Jitsu — Disciplina e Educação para a Vida.',
+  affiliation: {
+    '@type': 'Organization',
+    name: 'Associação Jiu-Jitsu - Disciplina e Educação para a Vida',
+    url: 'https://jiujitsudesterro.vercel.app/',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Desterro',
+    addressRegion: 'PB',
+    addressCountry: 'BR',
+  },
+}
+
+const whatsappMessage =
+  'Olá, professor Ramon! Conheci o Projeto Jiu-Jitsu Desterro pelo site e gostaria de mais informações sobre os treinos.'
 
 export default function Professor() {
   return (
-    <div className="bg-light min-h-screen">
-      {/* 1. Cabeçalho da Página */}
-      <PageHero
-        accent="Liderança & Técnica"
-        title="Professor"
-        subtitle="Conheça o fundador e mestre por trás do projeto."
+    <>
+      <SEO
+        title="Professor Ramon Cleber | Jiu-Jitsu Desterro (PB)"
+        description="Conheça Ramon Cleber do Carmo Lima, faixa-preta de jiu-jitsu, fundador do projeto social Jiu-Jitsu Desterro e presidente da associação."
+        path="/professor"
+        image="/img/membros/professorramon.jpeg"
+        schema={personSchema}
       />
 
-      {/* 2. Seção Biográfica com a Foto Estilizada */}
-      <section className="bg-white py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="bg-light min-h-screen">
+        <PageHero
+          accent="Fundador · Professor"
+          title="Ramon Cleber"
+          subtitle="Conheça o professor responsável pela criação e coordenação do Projeto Jiu-Jitsu Desterro."
+        />
 
-            {/* COLUNA DA FOTO - Estilo Home.jsx */}
-            <div className="relative order-2 md:order-1">
-              <div className="relative max-w-md mx-auto">
-                {/* Molduras Decorativas nos Cantos */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent opacity-50" />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent opacity-50" />
-                
-                {/* Container da Imagem Real */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-zinc-900 aspect-[3/4]">
-                  <img 
-                    src="/img/membros/professorramon.jpeg" 
-                    alt="Professor Ramon Cleber"                   />
-                  {/* Overlay sutil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-40" />
-                </div>
+        {/* BIOGRAFIA */}
+        <section className="bg-white py-20 md:py-24 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+              {/* FOTO */}
+              <div>
+                <figure className="relative max-w-md mx-auto">
+                  <div className="absolute -top-4 -left-4 w-full h-full border-2 border-accent/25 rounded-2xl" />
 
-                {/* Badge Flutuante */}
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-accent text-white px-8 py-4 rounded-full shadow-xl text-xs font-bold uppercase tracking-widest whitespace-nowrap">
-                  Fundador · Desde 2013
-                </div>
-              </div>
-            </div>
+                  <div className="relative rounded-2xl overflow-hidden bg-zinc-900 shadow-2xl">
+                    <img
+                      src="/img/membros/professorramon.jpeg"
+                      alt="Professor Ramon Cleber do Carmo Lima"
+                      loading="eager"
+                      decoding="async"
+                      className="w-full aspect-[3/4] object-cover object-center"
+                    />
 
-            {/* COLUNA DA BIO */}
-            <div className="order-1 md:order-2">
-              <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">Sobre o Mestre</p>
-              <h2 className="font-display text-6xl tracking-wide text-black leading-tight mb-6">
-                Ramon<br />Cleber
-              </h2>
-              <div className="w-12 h-1 bg-accent mb-8" />
+                    <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/70 to-transparent p-6 pt-24">
+                      <p className="font-display text-3xl text-white tracking-wide">
+                        Ramon Cleber
+                      </p>
 
-              <div className="space-y-4 text-zinc-600 text-sm leading-relaxed text-justify">
-                <p>
-                Faixa Preta de Jiu-Jitsu e fundador do projeto social <strong>JIU-JITSU — Disciplina e Educação para a Vida</strong>,
-                  Ramon Cleber é a força motriz por trás de uma das iniciativas sociais mais impactantes da cidade de Desterro.
-                </p>
-                <p>
-                  Sua trajetória no Jiu-Jitsu é marcada não apenas pelas conquistas técnicas no tatame, mas pelo compromisso
-                  genuíno em usar a arte marcial como veículo de transformação social. Em 2013, fundou o projeto em Desterro – PB, 
-                  oferecendo aulas gratuitas para a comunidade.
-                </p>
-                <p className="mb-8">
-                  Hoje, sob sua liderança, o projeto atende crianças, jovens e adultos, formando não apenas atletas
-                  competitivos, mas cidadãos íntegros e disciplinados através de uma pedagogia voltada para o desenvolvimento humano integral.
-                </p>
-              </div>
-
-              {/* Highlights Rápidos */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 mt-8">
-                {[
-                  { icon: 'fas fa-certificate', label: 'Bacharel em Educação Física' },
-                  { icon: 'fas fa-medal', label: 'Faixa Preta' },
-                  { icon: 'fas fa-users', label: '+80 alunos' },
-                ].map(({ icon, label }) => (
-                  <div key={label} className="flex items-center gap-3 bg-zinc-50 border border-zinc-100 rounded-xl p-4">
-                    <i className={`${icon} text-accent`}></i>
-                    <span className="text-xs font-bold text-zinc-700 uppercase tracking-wider">{label}</span>
+                      <p className="text-red-300 text-xs font-bold uppercase tracking-widest mt-1">
+                        Faixa-preta · Fundador · Professor
+                      </p>
+                    </figcaption>
                   </div>
-                ))}
+                </figure>
               </div>
 
-              <a
-                href="https://wa.me/558386909986"
-                target="_blank"
-                rel="noreferrer"
-                className="bg-black text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest inline-flex items-center gap-3 hover:bg-accent transition-all duration-300"
-              >
-                <i className="fab fa-whatsapp text-lg"></i>
-                Falar com o Professor
-              </a>
+              {/* BIO */}
+              <div>
+                <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                  Sobre o professor
+                </p>
+
+                <h1 className="font-display text-6xl md:text-7xl tracking-wide text-black leading-none mb-6">
+                  Ramon
+                  <br />
+                  Cleber
+                </h1>
+
+                <div className="w-12 h-1 bg-accent mb-8" />
+
+                <div className="space-y-5 text-zinc-600 leading-relaxed">
+                  <p>
+                    <strong>Ramon Cleber do Carmo Lima</strong>{' '}
+                    é faixa-preta de jiu-jitsu, bacharel em
+                    Educação Física e fundador do Projeto
+                    Jiu-Jitsu — Disciplina e Educação para a
+                    Vida.
+                  </p>
+
+                  <p>
+                    Em 2013, iniciou o projeto em Desterro com a
+                    proposta de oferecer treinamento gratuito à
+                    comunidade. Desde então, acompanha turmas
+                    infantis e adultas e participa da formação
+                    técnica dos alunos.
+                  </p>
+
+                  <p>
+                    Com a formalização da Associação Jiu-Jitsu —
+                    Disciplina e Educação para a Vida, em 2025,
+                    passou também a exercer a presidência da
+                    entidade.
+                  </p>
+
+                  <p>
+                    Em junho de 2026, representou a instituição
+                    na Câmara Municipal de Desterro durante a
+                    apresentação pública do projeto e a concessão
+                    de uma Moção de Apoio ao trabalho
+                    desenvolvido.
+                  </p>
+                </div>
+
+                {/* CREDENCIAIS */}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-7 mt-10 pt-8 border-t border-zinc-200">
+                  {destaques.map(
+                    ({
+                      icon: Icon,
+                      label,
+                      description,
+                    }) => (
+                      <div
+                        key={label}
+                        className="flex items-start gap-3"
+                      >
+                        <Icon
+                          size={21}
+                          className="text-accent flex-shrink-0 mt-1"
+                          aria-hidden="true"
+                        />
+
+                        <div>
+                          <p className="font-bold text-black text-sm">
+                            {label}
+                          </p>
+
+                          <p className="text-xs text-zinc-500 mt-1">
+                            {description}
+                          </p>
+                        </div>
+                      </div>
+                    ),
+                  )}
+                </div>
+
+                <div className="flex flex-wrap gap-4 mt-10">
+                  <a
+                    href={createWhatsAppUrl(
+                      contact.ramon.whatsapp,
+                      whatsappMessage,
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center justify-center gap-2"
+                  >
+                    <MessageCircle
+                      size={18}
+                      aria-hidden="true"
+                    />
+                    Falar com o professor
+                  </a>
+
+                  <Link
+                    to="/agenda"
+                    className="inline-flex items-center px-6 py-3 font-bold text-sm text-black hover:text-accent transition-colors"
+                  >
+                    Ver horários de treino
+                    <span
+                      className="ml-2"
+                      aria-hidden="true"
+                    >
+                      →
+                    </span>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* 3. Seção de Conquistas (Histórico) */}
-      <section className="bg-zinc-900 py-24 px-6">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-accent font-bold uppercase tracking-[4px] text-xs text-center mb-3">Histórico</p>
-          <h2 className="font-display text-5xl text-white tracking-wide text-center mb-4">Conquistas</h2>
-          <div className="w-12 h-1 bg-accent mx-auto mb-16" />
-          
-          <div className="space-y-4">
-            {conquistas.map((c, i) => (
-              <div
-                key={i}
-                className="group bg-zinc-800/50 border border-zinc-700/50 rounded-2xl px-6 py-6 flex items-center gap-6 hover:bg-zinc-800 hover:border-accent/50 transition-all duration-300"
-              >
-                <span className="font-display text-4xl text-accent flex-shrink-0 w-20 text-center">{c.ano}</span>
-                <div className="w-px h-10 bg-zinc-700 flex-shrink-0" />
-                <span className="text-zinc-300 text-sm md:text-base font-medium group-hover:text-white transition-colors">{c.titulo}</span>
-                <i className="fas fa-medal text-accent ml-auto flex-shrink-0 opacity-40 group-hover:opacity-100 transition-opacity"></i>
-              </div>
-            ))}
+        {/* TRAJETÓRIA */}
+        <section className="bg-zinc-950 text-white py-20 md:py-24 px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="max-w-2xl mb-14">
+              <p className="text-red-400 font-bold uppercase tracking-[4px] text-xs mb-3">
+                Atuação
+              </p>
+
+              <h2 className="font-display text-5xl md:text-6xl tracking-wide">
+                Trajetória no projeto
+              </h2>
+
+              <p className="text-zinc-400 leading-relaxed mt-4">
+                A história do professor está diretamente ligada
+                à construção e à continuidade do projeto em
+                Desterro.
+              </p>
+            </div>
+
+            <div className="border-t border-zinc-800">
+              {trajetoria.map((item) => (
+                <article
+                  key={`${item.ano}-${item.titulo}`}
+                  className="grid grid-cols-[75px_1fr] md:grid-cols-[120px_1fr] gap-6 md:gap-10 py-8 border-b border-zinc-800"
+                >
+                  <p className="font-display text-3xl md:text-4xl text-red-400">
+                    {item.ano}
+                  </p>
+
+                  <div>
+                    <h3 className="font-display text-2xl md:text-3xl tracking-wide text-white mb-2">
+                      {item.titulo}
+                    </h3>
+
+                    <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
+                      {item.texto}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-  );
+        </section>
+
+        {/* PAPEL NO PROJETO */}
+        <section className="bg-white py-20 md:py-24 px-6">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+            <div>
+              <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                No dia a dia
+              </p>
+
+              <h2 className="font-display text-5xl md:text-6xl text-black tracking-wide leading-none">
+                Professor,
+                <br />
+                coordenador e dirigente
+              </h2>
+            </div>
+
+            <div className="space-y-6 text-zinc-600 leading-relaxed">
+              <p>
+                A atuação de Ramon não se limita à condução dos
+                treinos. Como fundador e presidente da
+                associação, ele participa da organização das
+                atividades, do acompanhamento dos alunos e da
+                representação institucional do projeto.
+              </p>
+
+              <p>
+                Essa combinação entre trabalho técnico no tatame
+                e gestão da instituição ajuda a manter uma
+                continuidade entre os objetivos esportivos e a
+                atuação social desenvolvida em Desterro.
+              </p>
+
+              <div className="pt-4">
+                <Link
+                  to="/sobre"
+                  className="inline-flex items-center font-bold text-sm text-black hover:text-accent transition-colors"
+                >
+                  Conheça a história do projeto
+                  <span
+                    className="ml-2"
+                    aria-hidden="true"
+                  >
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="bg-zinc-100 py-16 md:py-20 px-6">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div>
+              <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
+                Conheça o treino
+              </p>
+
+              <h2 className="font-display text-4xl md:text-5xl text-black tracking-wide">
+                Visite o projeto em Desterro
+              </h2>
+
+              <p className="text-zinc-600 text-sm mt-3">
+                Consulte os horários e entre em contato antes da
+                sua primeira aula.
+              </p>
+            </div>
+
+            <Link
+              to="/contato"
+              className="btn-primary whitespace-nowrap text-center"
+            >
+              Quero participar
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
+  )
 }

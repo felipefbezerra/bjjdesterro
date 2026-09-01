@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jiujitsudesterro.vercel.app/sitemap.xml

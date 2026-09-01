@@ -1,23 +1,40 @@
-export default function PageHero({ title, subtitle, accent }) {
+export default function PageHero({
+  title,
+  subtitle,
+  accent,
+}) {
   return (
-    <div className="relative bg-black pt-32 pb-16 px-6 overflow-hidden">
-      {/* decorative texture */}
-      <div className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `repeating-linear-gradient(45deg, #8b0000 0, #8b0000 1px, transparent 0, transparent 50%)`,
-          backgroundSize: '12px 12px'
-        }}
-      />
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent" />
-      <div className="max-w-7xl mx-auto relative">
+    <section
+      className="relative bg-black border-b border-zinc-800 pt-32 pb-16 md:pt-36 md:pb-20 px-6"
+      aria-labelledby="page-title"
+    >
+      <div className="max-w-7xl mx-auto">
         {accent && (
-          <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">{accent}</p>
+          <div className="flex items-center gap-3 mb-4">
+            <span
+              className="block w-8 h-px bg-red-500"
+              aria-hidden="true"
+            />
+
+            <p className="text-red-400 font-bold uppercase tracking-[4px] text-xs">
+              {accent}
+            </p>
+          </div>
         )}
-        <h1 className="font-display text-white text-5xl md:text-7xl tracking-wide">{title}</h1>
+
+        <h1
+          id="page-title"
+          className="font-display text-white text-5xl sm:text-6xl md:text-7xl tracking-wide leading-none"
+        >
+          {title}
+        </h1>
+
         {subtitle && (
-          <p className="text-zinc-400 mt-3 text-sm md:text-base max-w-xl">{subtitle}</p>
+          <p className="text-zinc-400 mt-5 text-sm md:text-base leading-relaxed max-w-2xl">
+            {subtitle}
+          </p>
         )}
       </div>
-    </div>
+    </section>
   )
 }

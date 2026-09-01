@@ -1,0 +1,91 @@
+{
+  "midia": [
+    {
+      "id": 1,
+      "data": "15 de Junho de 2026",
+      "fonte": "Diário de Pernambuco",
+      "tipo": "jornal",
+      "titulo": "Projeto Jiu-Jitsu de Desterro Conquista Medalhas no Open Itapetim",
+      "descricao": "Atletas do projeto social chegam ao pódio em importante competição de Jiu-Jitsu no interior de Pernambuco.",
+      "imagem": "img/midia/jornal-open-itapetim.jpg",
+      "link": "https://diariodepernambuco.com.br"
+    },
+    {
+      "id": 2,
+      "data": "10 de Junho de 2026",
+      "fonte": "Instagram @projetojiujitsu_desterro",
+      "tipo": "instagram",
+      "titulo": "Cerimônia de Graduação 2025 — Sucesso Total!",
+      "descricao": "Mais de 30 alunos foram graduados em celebração que reconheceu a dedicação e evolução de todos.",
+      "imagem": "img/midia/insta-graduacao.jpg",
+      "link": "https://www.instagram.com/projetojiujitsu_desterro/"
+    },
+    {
+      "id": 3,
+      "data": "08 de Junho de 2026",
+      "fonte": "Rádio Desterro FM",
+      "tipo": "radio",
+      "titulo": "Entrevista com Prof. Ramon Cleber sobre o Projeto Social",
+      "descricao": "Professor fala sobre inclusão social e transformação de vidas através do Jiu-Jitsu na comunidade.",
+      "imagem": "img/midia/radio-entrevista.jpg",
+      "link": null
+    },
+    {
+      "id": 4,
+      "data": "01 de Junho de 2026",
+      "fonte": "Prefeitura de Desterro",
+      "tipo": "oficial",
+      "titulo": "Projeto Jiu-Jitsu Reconhecido pelo Município",
+      "descricao": "Administração municipal elogia trabalho social realizado pelo projeto há mais de 12 anos.",
+      "imagem": "img/midia/prefeitura-menção.jpg",
+      "link": null
+    }
+  ],
+  "conquistas": [
+    {
+      "id": 1,
+      "ano": 2026,
+      "titulo": "Placa de Apoio — Câmara de Vereadores de Desterro",
+      "descricao": "Reconhecimento oficial pela contribuição ao desenvolvimento social e educacional da cidade através do Jiu-Jitsu.",
+      "tipo": "placa",
+      "imagem": "img/conquistas/placa-camara-vereadores.jpg",
+      "destaque": true
+    },
+    {
+      "id": 2,
+      "ano": 2026,
+      "titulo": "Certificado de Mérito — Secretaria de Esportes",
+      "descricao": "Certificado de reconhecimento pela promoção de atividades esportivas e inclusão social em Desterro.",
+      "tipo": "certificado",
+      "imagem": "img/conquistas/certificado-secretaria-esportes.jpg",
+      "destaque": false
+    },
+    {
+      "id": 3,
+      "ano": 2025,
+      "titulo": "Prêmio Instituição Social do Ano",
+      "descricao": "Eleito como melhor projeto social da região pelo trabalho contínuo de transformação de vidas.",
+      "tipo": "premio",
+      "imagem": "img/conquistas/premio-social-2025.jpg",
+      "destaque": true
+    },
+    {
+      "id": 4,
+      "ano": 2024,
+      "titulo": "Reconhecimento Estadual — Governo de Pernambuco",
+      "descricao": "Projeto recebeu menção honrosa do governo estadual por contribuição ao desenvolvimento integral de crianças e jovens.",
+      "tipo": "reconhecimento",
+      "imagem": "img/conquistas/governo-pe-2024.jpg",
+      "destaque": false
+    },
+    {
+      "id": 5,
+      "ano": 2023,
+      "titulo": "Participação — Campeonato Paraibano",
+      "descricao": "Projeto representou Desterro no Campeonato Paraibano com atletas da modalidade Jiu-Jitsu.",
+      "tipo": "participacao",
+      "imagem": "img/conquistas/paraibano-2023.jpg",
+      "destaque": false
+    }
+  ]
+}
