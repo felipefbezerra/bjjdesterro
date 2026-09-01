@@ -148,9 +148,17 @@ export default function SEO({
 
       document.head.appendChild(script)
     }
-  }, [title, description, path, image, type, schema])
-
-  noIndex
+  }, 
+  
+[
+  title,
+  description,
+  path,
+  image,
+  type,
+  schema,
+  noIndex,
+])
 
   return null
 

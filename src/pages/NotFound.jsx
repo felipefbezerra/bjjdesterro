@@ -46,10 +46,3 @@ export default function NotFound() {
     </>
   )
 }
-
-<SEO
-  title="Página não encontrada | Jiu-Jitsu Desterro"
-  description="A página que você procura não foi encontrada."
-  path="/404"
-  noIndex
-/>

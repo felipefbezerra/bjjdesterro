@@ -4,6 +4,7 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom'
+
 import { Analytics } from '@vercel/analytics/react'
 
 import Navbar from './components/Navbar'
@@ -16,10 +17,10 @@ import Galeria from './pages/Galeria'
 import Regras from './pages/Regras'
 import Contato from './pages/Contato'
 import Professor from './pages/Professor'
-import NotFound from './pages/NotFound'
 import Resultados from './pages/Resultados'
 import Transparencia from './pages/Transparencia'
 import NoticiaMocao from './pages/NoticiaMocao'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -42,11 +43,6 @@ export default function App() {
 
       <Navbar />
 
-      <Route
-  path="/resultados"
-  element={<Resultados />}
-/>
-
       <main className="flex-1">
         <Routes>
           <Route
@@ -65,6 +61,21 @@ export default function App() {
           />
 
           <Route
+            path="/professor"
+            element={<Professor />}
+          />
+
+          <Route
+            path="/resultados"
+            element={<Resultados />}
+          />
+
+          <Route
+            path="/noticias/mocao-de-apoio-camara-desterro-2026"
+            element={<NoticiaMocao />}
+          />
+
+          <Route
             path="/galeria"
             element={<Galeria />}
           />
@@ -75,8 +86,8 @@ export default function App() {
           />
 
           <Route
-            path="/professor"
-            element={<Professor />}
+            path="/transparencia"
+            element={<Transparencia />}
           />
 
           <Route
