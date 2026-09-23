@@ -102,7 +102,7 @@ const gallerySchema = {
   name: 'Galeria | Projeto Jiu-Jitsu Desterro',
   description:
     'Fotos de treinos, competições, graduações e visitas do Projeto Jiu-Jitsu Desterro, na Paraíba.',
-  url: 'https://jiujitsudesterro.vercel.app/galeria',
+  url: 'https://jiujitsudesterro.com.br/galeria',
 }
 
 export default function Galeria() {
