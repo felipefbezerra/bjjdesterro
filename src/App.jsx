@@ -21,6 +21,7 @@ import Resultados from './pages/Resultados'
 import Transparencia from './pages/Transparencia'
 import NoticiaMocao from './pages/NoticiaMocao'
 import NotFound from './pages/NotFound'
+import Doacoes from './pages/Doacoes'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -85,6 +86,11 @@ export default function App() {
             element={<Regras />}
           />
 
+          <Route
+            path="/doacoes"
+            element={<Doacoes />}
+          />
+          
           <Route
             path="/transparencia"
             element={<Transparencia />}

@@ -2,53 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/</loc>
+    <loc>https://www.jiujitsudesterro.com.br/</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/sobre</loc>
+    <loc>https://www.jiujitsudesterro.com.br/sobre</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/agenda</loc>
+    <loc>https://www.jiujitsudesterro.com.br/agenda</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/professor</loc>
+    <loc>https://www.jiujitsudesterro.com.br/professor</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/resultados</loc>
+    <loc>https://www.jiujitsudesterro.com.br/resultados</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/noticias/mocao-de-apoio-camara-desterro-2026</loc>
+    <loc>https://www.jiujitsudesterro.com.br/noticias/mocao-de-apoio-camara-desterro-2026</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/galeria</loc>
+    <loc>https://www.jiujitsudesterro.com.br/galeria</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/regras</loc>
+    <loc>https://www.jiujitsudesterro.com.br/regras</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/transparencia</loc>
+    <loc>https://www.jiujitsudesterro.com.br/transparencia</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
   <url>
-    <loc>https://jiujitsudesterro.vercel.app/contato</loc>
+    <loc>https://www.jiujitsudesterro.com.br/contato</loc>
     <lastmod>2026-09-01</lastmod>
   </url>
 
+  <url>
+    <loc>https://www.jiujitsudesterro.com.br/doacoes</loc>
+  </url>
 </urlset>

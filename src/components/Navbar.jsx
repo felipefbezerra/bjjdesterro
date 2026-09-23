@@ -125,10 +125,10 @@ export default function Navbar() {
         </nav>
 
         <Link
-          to="/contato"
+          to="/doacoes"
           className="hidden md:inline-flex btn-primary text-xs py-2 px-5"
         >
-          Quero participar
+          Apoie o Projeto
         </Link>
 
         <button
@@ -187,10 +187,10 @@ export default function Navbar() {
             ))}
 
             <Link
-              to="/contato"
+              to="/doacoes"
               className="mt-4 btn-primary text-center text-xs py-3"
             >
-              Quero participar
+              Apoie o Projeto
             </Link>
           </nav>
         </div>
