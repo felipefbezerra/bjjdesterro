@@ -16,7 +16,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'NewsArticle',
   headline:
-    'Projeto Jiu-Jitsu Desterro tem 16 medalhistas na Copa Sertão de Jiu-Jitsu',
+    'Projeto Jiu-Jitsu Desterro conquista 16 medalhas na Copa Sertão de Jiu-Jitsu',
   datePublished: '2026-09-20',
   dateModified: '2026-10-08',
   image:
@@ -36,13 +36,19 @@ const articleSchema = {
   },
   mainEntityOfPage: `https://jiujitsudesterro.vercel.app${PATH}`,
   description:
-    'Projeto social de jiu-jitsu de Desterro (PB) voltou da Copa Sertão de Jiu-Jitsu, em Patos, com 16 atletas medalhistas em setembro de 2026.',
+    'Projeto social de jiu-jitsu de Desterro (PB) conquistou 16 medalhas na Copa Sertão de Jiu-Jitsu, em Patos: 11 de ouro, 4 de prata e 1 de bronze.',
 }
 
+const quadro = [
+  { total: 11, medalha: 'Ouro' },
+  { total: 4, medalha: 'Prata' },
+  { total: 1, medalha: 'Bronze' },
+]
+
 /*
- * Medalhistas já identificados nos registros do projeto.
- * Para completar a lista, basta acrescentar o nome no grupo
- * correspondente.
+ * Medalhistas já identificados pelo projeto.
+ * A lista é parcial: para completar, basta acrescentar o
+ * nome no grupo correspondente.
  */
 const medalhistas = [
   {
@@ -63,6 +69,10 @@ const medalhistas = [
       'Jerffeson Ramon',
       'Vitor',
     ],
+  },
+  {
+    medalha: 'Bronze',
+    atletas: ['Felipe'],
   },
   {
     medalha: 'Pódio infantojuvenil',
@@ -105,19 +115,37 @@ const fotos = [
 
 /*
  * Matérias da imprensa sobre a participação do projeto.
- * Enquanto a lista estiver vazia, o bloco "Na imprensa"
- * não é exibido.
- *
- * { veiculo: 'Folha Patoense', titulo: '...', url: 'https://...' }
+ * Para incluir outra, basta acrescentar { veiculo, url }.
  */
-const referencias = []
+const referencias = [
+  {
+    veiculo: 'Folha Patoense',
+    url: 'https://folhapatoense.com/2026/09/21/projeto-de-jiu-jitsu-de-desterro-conquista-16-medalhas-na-copa-sertao-em-patos-0/',
+  },
+  {
+    veiculo: 'Patos Online',
+    url: 'https://patosonline.com/noticia/280246/projeto-de-jiu-jitsu-de-desterro-conquista-16-medalhas-na-copa-sertao-em-patos-pb',
+  },
+  {
+    veiculo: 'Correio Serrano',
+    url: 'https://correioserrano.com.br/projeto-de-jiu-jitsu-de-desterro-conquista-16-medalhas-na-copa-sertao-em-patos-pb/',
+  },
+  {
+    veiculo: 'Teixeira em Foco',
+    url: 'https://teixeiraemfoco.com/noticia/20644/projeto-de-jiu-jitsu-de-desterro-conquista-16-medalhas-na-copa-sertao-em-patos',
+  },
+  {
+    veiculo: 'Portal do Curimataú',
+    url: 'https://portaldocurimatau.com.br/curimatau/projeto-de-jiu-jitsu-de-desterro-conquista-16-medalhas-na-copa-sertao-em-patos-pb/',
+  },
+]
 
 export default function NoticiaCopaSertao() {
   return (
     <>
       <SEO
-        title="Projeto Jiu-Jitsu Desterro tem 16 medalhistas na Copa Sertão"
-        description="Projeto Jiu-Jitsu — Disciplina e Educação para a Vida voltou da Copa Sertão de Jiu-Jitsu, em Patos (PB), com 16 atletas medalhistas em setembro de 2026."
+        title="Projeto Jiu-Jitsu Desterro conquista 16 medalhas na Copa Sertão"
+        description="Projeto Jiu-Jitsu — Disciplina e Educação para a Vida conquistou 16 medalhas na Copa Sertão de Jiu-Jitsu, em Patos (PB): 11 de ouro, 4 de prata e 1 de bronze."
         path={PATH}
         image="/img/campeonatos/equipemedalhista-1600.jpg"
         type="article"
@@ -143,7 +171,7 @@ export default function NoticiaCopaSertao() {
             </p>
 
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl tracking-wide leading-none max-w-4xl">
-              Projeto tem 16 medalhistas na Copa Sertão de Jiu-Jitsu, em Patos
+              Projeto conquista 16 medalhas na Copa Sertão de Jiu-Jitsu, em Patos
             </h1>
 
             <div className="flex flex-wrap gap-x-6 gap-y-3 mt-7 text-sm text-zinc-400">
@@ -169,17 +197,37 @@ export default function NoticiaCopaSertao() {
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
           <p className="text-xl md:text-2xl text-zinc-800 leading-relaxed font-medium mb-10">
             O Projeto Jiu-Jitsu — Disciplina e Educação para a
-            Vida representou Desterro na Copa Sertão de
-            Jiu-Jitsu, realizada em Patos no dia 20 de setembro
-            de 2026, e voltou para casa com 16 atletas
-            medalhistas.
+            Vida conquistou 16 medalhas na Copa Sertão de
+            Jiu-Jitsu, realizada em Patos no domingo, 20 de
+            setembro de 2026. Todos os atletas do projeto que
+            competiram subiram ao pódio.
           </p>
+
+          <dl
+            className="grid grid-cols-3 border-y border-zinc-200 divide-x divide-zinc-200 mb-10"
+            aria-label="Quadro de medalhas do projeto na Copa Sertão"
+          >
+            {quadro.map(({ total, medalha }) => (
+              <div
+                key={medalha}
+                className="flex flex-col-reverse py-6 px-4 first:pl-0 last:pr-0"
+              >
+                <dt className="text-xs font-bold uppercase tracking-widest text-accent mt-1">
+                  {medalha}
+                </dt>
+
+                <dd className="font-display text-6xl md:text-7xl text-black leading-none">
+                  {total}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
           <figure className="mb-10">
             <div className="overflow-hidden rounded-xl bg-zinc-900 aspect-[4/3]">
               <img
                 src="/img/campeonatos/equipemedalhista-1600.jpg"
-                alt="Os 16 medalhistas do Projeto Jiu-Jitsu Desterro reunidos no tatame do projeto, com as medalhas da Copa Sertão"
+                alt="Atletas do Projeto Jiu-Jitsu Desterro reunidos no tatame do projeto, com as medalhas da Copa Sertão"
                 width="1600"
                 height="1200"
                 decoding="async"
@@ -195,17 +243,21 @@ export default function NoticiaCopaSertao() {
 
           <div className="space-y-6 text-zinc-600 leading-relaxed">
             <p>
-              A equipe viajou a Patos com atletas de
+              Foram 11 medalhas de ouro, 4 de prata e 1 de
+              bronze. A equipe viajou a Patos com atletas de
               diferentes idades e graduações, das turmas
-              infantojuvenis aos adultos, e subiu ao pódio em
-              várias categorias ao longo do dia.
+              infantojuvenis aos adultos, acompanhada pelo
+              professor Ramon Cleber do Carmo Lima,
+              idealizador do projeto.
             </p>
 
             <p>
-              Entre os resultados já registrados pelo projeto
-              estão seis medalhas de ouro e três de prata. Os
-              atletas foram acompanhados pelo professor Ramon
-              Cleber do Carmo Lima, idealizador do projeto.
+              O resultado reflete os valores trabalhados no
+              dia a dia do tatame — disciplina, respeito,
+              responsabilidade, perseverança e superação — e
+              foi alcançado mesmo diante das dificuldades e da
+              falta de apoio que o projeto enfrenta para se
+              manter.
             </p>
 
             <p>
@@ -217,9 +269,9 @@ export default function NoticiaCopaSertao() {
             <p>
               A participação na Copa Sertão se soma a outras
               competições disputadas pelo projeto em 2026, como
-              o Campeonato Paraibano e o Open Itapetim, e leva
-              o nome do município para mais um evento esportivo
-              da região.
+              o Campeonato Paraibano e o Open Itapetim, e
+              reforça o esporte como ferramenta de educação e
+              cidadania em Desterro.
             </p>
           </div>
 
@@ -235,7 +287,7 @@ export default function NoticiaCopaSertao() {
               id="medalhistas-titulo"
               className="font-display text-4xl md:text-5xl text-black tracking-wide mb-6"
             >
-              Medalhistas registrados
+              Alguns dos medalhistas
             </h2>
 
             <dl className="border-y border-zinc-200 divide-y divide-zinc-200">
@@ -261,8 +313,8 @@ export default function NoticiaCopaSertao() {
             </dl>
 
             <p className="text-xs text-zinc-500 leading-relaxed mt-4">
-              Lista parcial, com os atletas já identificados nos
-              registros do projeto.
+              Lista parcial, com os atletas já identificados
+              pelo projeto.
             </p>
           </section>
 
@@ -313,47 +365,46 @@ export default function NoticiaCopaSertao() {
             </Link>
           </section>
 
-          {referencias.length > 0 && (
-            <aside className="mt-12 pt-8 border-t border-zinc-200">
-              <p className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">
-                Na imprensa
-              </p>
+          <aside
+            className="mt-14 pt-8 border-t border-zinc-200"
+            aria-labelledby="imprensa-titulo"
+          >
+            <p
+              id="imprensa-titulo"
+              className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3"
+            >
+              Na imprensa
+            </p>
 
-              <p className="text-sm text-zinc-600 leading-relaxed mb-5">
-                A participação do projeto na Copa Sertão também
-                foi noticiada pela imprensa regional.
-              </p>
+            <p className="text-sm text-zinc-600 leading-relaxed mb-5">
+              A conquista do projeto na Copa Sertão também foi
+              noticiada pela imprensa regional.
+            </p>
 
-              <ul className="space-y-4">
-                {referencias.map(
-                  ({ veiculo, titulo, url }) => (
-                    <li key={url}>
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group inline-flex items-start gap-2 text-sm font-bold text-black hover:text-accent transition-colors"
-                      >
-                        <span>
-                          {titulo}
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {referencias.map(({ veiculo, url }) => (
+                <li key={url}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-accent transition-colors"
+                  >
+                    {veiculo}
 
-                          <span className="block text-xs font-medium text-zinc-500 mt-1">
-                            {veiculo}
-                          </span>
-                        </span>
+                    <ExternalLink
+                      size={16}
+                      aria-hidden="true"
+                    />
 
-                        <ExternalLink
-                          size={16}
-                          className="shrink-0 mt-0.5"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    </li>
-                  ),
-                )}
-              </ul>
-            </aside>
-          )}
+                    <span className="sr-only">
+                      (abre em nova aba)
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </aside>
 
           <div className="mt-14 bg-zinc-100 p-7 md:p-9 rounded-xl">
             <p className="text-accent font-bold uppercase tracking-[4px] text-xs mb-3">
