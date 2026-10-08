@@ -167,6 +167,19 @@ export default function Resultados() {
                     <p className="text-zinc-600 text-sm leading-relaxed">
                       {resultado.resumo}
                     </p>
+
+                    {resultado.link && (
+                      <Link
+                        to={resultado.link}
+                        className="inline-flex items-center gap-2 font-bold text-sm text-black hover:text-accent transition-colors mt-4"
+                      >
+                        Ler notícia
+                        <ArrowRight
+                          size={17}
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    )}
                   </div>
                 </article>
               ))}

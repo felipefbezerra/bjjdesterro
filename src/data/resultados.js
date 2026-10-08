@@ -1,5 +1,17 @@
 export const resultados = [
   {
+    id: 'copa-sertao-2026',
+    ano: '2026',
+    tipo: 'Competição',
+    titulo: '16 medalhistas na Copa Sertão',
+    resumo:
+      'O projeto representou Desterro na Copa Sertão de Jiu-Jitsu, em Patos, e voltou com 16 atletas medalhistas.',
+    local: 'Patos · PB',
+    imagem: '/img/campeonatos/equipemedalhista-1600.jpg',
+    link: '/noticias/copa-sertao-jiu-jitsu-patos-2026',
+  },
+
+  {
     id: 'paraibano-2026-ramon',
     ano: '2026',
     tipo: 'Competição',

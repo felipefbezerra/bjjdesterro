@@ -20,6 +20,7 @@ import Professor from './pages/Professor'
 import Resultados from './pages/Resultados'
 import Transparencia from './pages/Transparencia'
 import NoticiaMocao from './pages/NoticiaMocao'
+import NoticiaCopaSertao from './pages/NoticiaCopaSertao'
 import NotFound from './pages/NotFound'
 import Doacoes from './pages/Doacoes'
 
@@ -74,6 +75,11 @@ export default function App() {
           <Route
             path="/noticias/mocao-de-apoio-camara-desterro-2026"
             element={<NoticiaMocao />}
+          />
+
+          <Route
+            path="/noticias/copa-sertao-jiu-jitsu-patos-2026"
+            element={<NoticiaCopaSertao />}
           />
 
           <Route
