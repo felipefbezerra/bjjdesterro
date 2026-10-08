@@ -1,5 +1,17 @@
 export const resultados = [
   {
+    id: 'copa-sertao-2026',
+    ano: '2026',
+    tipo: 'Competição',
+    titulo: '16 medalhas na Copa Sertão',
+    resumo:
+      'O projeto conquistou 16 medalhas na Copa Sertão de Jiu-Jitsu, em Patos: 11 de ouro, 4 de prata e 1 de bronze.',
+    local: 'Patos · PB',
+    imagem: '/img/campeonatos/equipemedalhista-1600.jpg',
+    link: '/noticias/copa-sertao-jiu-jitsu-patos-2026',
+  },
+
+  {
     id: 'paraibano-2026-ramon',
     ano: '2026',
     tipo: 'Competição',
